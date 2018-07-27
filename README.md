@@ -1,30 +1,30 @@
 # producerjson
 
-Producer JSON smart contract for EOS.
+Producer JSON smart contract for Enumivo.
 
 # Usage
 
 ### View the table
 
 ```
-cleos get table producerjson producerjson producerjson
+enucli get table producerjson producerjson producerjson
 ```
 
 ### Add to the table
 
 ```
-cleos push action producerjson set '{"owner":"your_account", "json": "your_json"}' -p your_account@active
+enucli push action producerjson set '{"owner":"your_account", "json": "your_json"}' -p your_account@active
 ```
 
 **Example**:
 ```
-cleos push action producerjson set '{"owner":"teamgreymass", "json": "'`printf %q $(cat bp.json | tr -d "\r")`'"}' -p teamgreymass@active
+enucli push action producerjson set '{"owner":"teamgreymass", "json": "'`printf %q $(cat bp.json | tr -d "\r")`'"}' -p teamgreymass@active
 ```
 
 ### Remove from the table
 
 ```
-cleos push action producerjson del '{"owner":"your_account"}' -p your_account@active
+enucli push action producerjson del '{"owner":"your_account"}' -p your_account@active
 ```
 
 
@@ -36,11 +36,11 @@ cleos push action producerjson del '{"owner":"your_account"}' -p your_account@ac
 ```
 or
 ```
-eosiocpp -g producerjson.abi producerjson.cpp && eosiocpp -o producerjson.wast producerjson.cpp
+enumivocpp -g producerjson.abi producerjson.cpp && enumivocpp -o producerjson.wast producerjson.cpp
 ```
 
 # How to deploy
 
 ```
-cleos set contract producerjson producerjson -p producerjson@active
+enucli set contract producerjson producerjson -p producerjson@active
 ```
